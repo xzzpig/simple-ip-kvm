@@ -1,0 +1,26 @@
+# simple ip-kvm will look for a configuration file in the following order:
+#  - ./.simple-ip-kvm.yaml
+#  - ~/.simple-ip-kvm.yaml
+# or you Or you can specify it through the parameter --config 
+debug: false
+serialport: /dev/ttyUSB0
+web:
+    addr: 0.0.0.0:8000
+    basepath: /
+    title: Simple IP-KVM
+    # key/value for user/pass list for http basic authorize, empty to disable
+    auth: {}
+video:
+    # video streamer type, [external]
+    type: external
+    streamurl: '{URL_PROTOCOL}//{URL_HOST}:{STREAM_PORT}'
+    streampath: /?action=stream
+    snapshotpath: /?action=stream
+    streamer:
+        port: 8010
+# reverse proxy to video streamer
+proxy:
+    enable: false
+    path: /stream
+    # rewrite path to /
+    rewrite: true

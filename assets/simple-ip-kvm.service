@@ -1,0 +1,7 @@
+[Unit]
+Description=simple ip kvm service
+After=network.target
+[Service]
+ExecStart=/usr/local/bin/simple-ip-kvm serve --config /etc/simple-ip-kvm.yaml
+[Install]
+WantedBy=multi-user.target

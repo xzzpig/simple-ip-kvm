@@ -1,0 +1,3 @@
+#/bin/bash
+go get github.com/spf13/cobra-cli
+go run github.com/spf13/cobra-cli $@
